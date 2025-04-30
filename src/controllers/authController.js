@@ -62,9 +62,9 @@ router.post('/reset-password', (req, res) => {
     const { username, email } = req.body;
     
     // コマンドラインツールを使ったログ記録
-    const logCommand = `echo "Password reset requested for: ${username} (${email})" >> logs/password_resets.log`;
+    const logMessage = `Password reset requested for: ${username} (${email})`;
     
-    require('child_process').exec(logCommand, (error) => {
+    require('child_process').execFile('echo', [logMessage], { shell: true }, (error) => {
         if (error) {
             return res.status(500).send('パスワードリセットリクエストのログ記録に失敗しました');
         }
