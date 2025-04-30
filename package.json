@@ -1,0 +1,24 @@
+{
+  "name": "vulnerable-js-training",
+  "version": "1.0.0",
+  "description": "A training application demonstrating common web vulnerabilities such as XSS and SQL injection.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "mongoose": "^5.10.9",
+    "pg": "^8.15.6"
+  },
+  "keywords": [
+    "vulnerabilities",
+    "XSS",
+    "SQL injection",
+    "training"
+  ],
+  "author": "Your Name",
+  "license": "ISC"
+}
