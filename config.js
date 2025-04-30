@@ -39,6 +39,23 @@ const config = {
       baseUrl: "https://api.github.com",
       version: "2022-11-28"
     }
+  },
+  
+  // パスワード設定
+  security: {
+    // 管理者用パスワード
+    oreore_pass: "Adm1n@2025_S3cr3t!P@55",
+    // 一般ユーザー用パスワード
+    password: "Us3r-P@ssw0rd_2025#Demo"
+  },
+  
+  // データベース接続設定
+  database: {
+    host: "localhost",
+    port: 5432,
+    name: "vulndb",
+    user: "dbadmin",
+    password: "DB@dm1n-P@ss2025!"
   }
 };
 
