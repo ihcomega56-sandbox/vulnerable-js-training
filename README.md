@@ -1,4 +1,4 @@
-# Vulnerable JavaScript Training Application
+# Vulnerable JavaScript Training Application for GHAS
 
 This project is designed for training purposes to demonstrate common web vulnerabilities, including Cross-Site Scripting (XSS), SQL Injection, and other security issues. 
 
