@@ -1,10 +1,17 @@
 const express = require('express');
+const rateLimit = require('express-rate-limit');
 const UserModel = require('../models/userModel');
 const db = require('../utils/database');
 const fs = require('fs');
 const path = require('path');
 
 const router = express.Router();
+const passwordResetLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 5,
+    standardHeaders: 'draft-8',
+    legacyHeaders: false
+});
 
 // ログイン処理 - ユーザー認証の実装
 router.post('/login', (req, res) => {
@@ -58,7 +65,7 @@ router.post('/register', (req, res) => {
 });
 
 // パスワードリセット - パスワード再設定処理
-router.post('/reset-password', (req, res) => {
+router.post('/reset-password', passwordResetLimiter, (req, res) => {
     const { username, email } = req.body;
     
     // コマンドラインツールを使ったログ記録
